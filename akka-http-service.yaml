@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akka-http-service
+  labels:
+    app: akka-http
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  selector:
+    matchLabels:
+      app: akka-http
+  template:
+    metadata:
+      name: akka-http-service
+      labels:
+        app: akka-http
+    spec:
+      containers:
+        - name: akka-http-service 
+          image: girdharshubham/akka-http-service
+          env:
+            - name: ELASTICSEARCH_PORT
+              value: "9200"
+            
+            - name: ELASTICSEARCH_HOST
+              value: "localhost"
+            
+            - name: ELASTICSEARCH_INDEX
+              value: "emp_address_index"
+            
+            - name: ELASTICSEARCH_TYPE
+              value: "emp_address"
+            
+            - name: KAFKA_TOPIC
+              value: "employeesDetail"
+            
+            - name: KAFKA_SERVER
+              value: "192.168.1.227:9092"
+            - name: AKKA_HTTP_HOST
+              value: "localhost"
+            - name: AKKA_HTTP_PORT
+              value: "8080"
+          ports:
+            - containerPort: 8080
+          

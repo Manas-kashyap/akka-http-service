@@ -1,0 +1,7 @@
+docker login -u $USERNAME -p $PASSWORD
+
+docker build . -t $REGISTRY/$IMAGE_TAG
+
+docker images | grep $REGISTRY/$IMAGE_TAG
+
+docker logout
