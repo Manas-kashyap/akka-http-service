@@ -28,7 +28,7 @@ spec:
   ports:
     - port: 9200
       name: serving
-      nodePort: 32000
+      nodePort: 32001
     - port: 9300
       name: node-to-node
 ...
