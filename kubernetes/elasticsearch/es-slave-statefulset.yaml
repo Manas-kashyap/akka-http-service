@@ -80,9 +80,9 @@ spec:
             - name: cluster.name
               value: elasticsearch-cluster
             - name: cluster.initial_master_nodes
-              value: es-master-0.elasticsearch-master
+              value: elasticsearch-master-0.elasticsearch-master
             - name: discovery.seed_hosts
-              value: es-master-0.elasticsearch-master
+              value: elasticsearch-master-0.elasticsearch-master
             - name: ES_JAVA_OPTS
               value: -Xms512m -Xmx512m
   volumeClaimTemplates:
