@@ -27,11 +27,9 @@ pipeline{
   	stage('Containerizing & Pushing to Registry') {
   		steps {
   			withCredentials([usernamePassword(credentialsId: 'caad6e6d-08a2-4021-8110-571d671c6c23', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-  				withEnv(['REGISTRY="girdharshubham"', 'IMAGE_TAG="akka-http"']) {
-  					sh '''
-  						./docker-build
-  					'''
-  				}
+				sh '''
+					./docker-build
+				'''
   			}
   		}
   	}

@@ -1,7 +1,7 @@
 docker login -u $USERNAME -p $PASSWORD
 
-docker build . -t $REGISTRY/$IMAGE_TAG
+docker build . -t girdharshubham/akka-http
 
-docker images | grep $REGISTRY/$IMAGE_TAG
+docker images | grep girdharshubham/akka-http
 
 docker logout
