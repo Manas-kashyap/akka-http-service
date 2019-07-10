@@ -28,7 +28,7 @@ spec:
               value: "9200"
             
             - name: ELASTICSEARCH_HOST
-              value: "localhost"
+              value: "elasticsearch-master.elasticsearch-master"
             
             - name: ELASTICSEARCH_INDEX
               value: "emp_address_index"
@@ -40,7 +40,7 @@ spec:
               value: "employeesDetail"
             
             - name: KAFKA_SERVER
-              value: "192.168.1.227:9092"
+              value: "kafka-0.kafka-hs:9093"
             - name: AKKA_HTTP_HOST
               value: "0.0.0.0"
             - name: AKKA_HTTP_PORT
