@@ -35,5 +35,16 @@ pipeline{
   			}
   		}
   	}
+
+  	stage('Deploy') {
+  		when {
+  			branch 'master'
+  		}
+  		steps {
+  			sh '''
+  				./k8s-starter.sh
+  			'''
+  		}
+  	}
   }
 }
