@@ -25,6 +25,10 @@ pipeline{
   	}
 
   	stage('Containerizing & Pushing to Registry') {
+		steps {
+			sh ''' whoami
+			   '''
+		}
   		steps {
   			withCredentials([usernamePassword(credentialsId: '6f550157-8b4a-4c75-8e85-12e076bb6974', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
 				sh '''
