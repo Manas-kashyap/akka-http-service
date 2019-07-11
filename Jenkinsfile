@@ -40,6 +40,10 @@ pipeline{
   		}
   		steps {
   			sh '''
+  				chmod 777 k8s-starter.sh
+  			'''
+  			
+  			sh '''
   				./k8s-starter.sh
   			'''
   		}
